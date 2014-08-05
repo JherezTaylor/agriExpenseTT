@@ -8,12 +8,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
 
-
-
-
-import com.example.agriexpensett.cycleendpoint.model.Cycle;
-import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -35,6 +29,10 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.agriexpensett.cycleendpoint.model.Cycle;
+import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
+
 import dataObjects.localCycle;
 import dataObjects.localCycleUse;
 

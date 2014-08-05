@@ -1,9 +1,9 @@
 package dataObjects;
 
-import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
 
 public class localResourcePurchase implements Parcelable{
 	private int pId;

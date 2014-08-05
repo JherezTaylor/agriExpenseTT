@@ -7,10 +7,9 @@ import helper.DbHelper;
 import helper.DbQuery;
 
 import java.util.ArrayList;
+
 import uwi.dcit.AgriExpenseTT.EditPurchase;
 import uwi.dcit.AgriExpenseTT.R;
-import dataObjects.localCycle;
-import dataObjects.localResourcePurchase;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -29,6 +28,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import dataObjects.localCycle;
+import dataObjects.localResourcePurchase;
 
 public class ChoosePurchase extends ListFragment {
 	MyListAdapter myListAdapter;

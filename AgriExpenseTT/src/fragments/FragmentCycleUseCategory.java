@@ -8,8 +8,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
-
 import uwi.dcit.AgriExpenseTT.R;
 import uwi.dcit.AgriExpenseTT.UseResource;
 import uwi.dcit.AgriExpenseTT.ViewCycleUsege;
@@ -24,6 +22,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
+
 import dataObjects.localCycle;
 import dataObjects.localCycleUse;
 

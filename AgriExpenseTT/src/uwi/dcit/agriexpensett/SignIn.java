@@ -1,32 +1,24 @@
 package uwi.dcit.AgriExpenseTT;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-
 import helper.CloudInterface;
 import helper.DbHelper;
 import helper.DbQuery;
 import helper.Sync;
 
-import com.example.agriexpensett.upaccendpoint.model.UpAcc;
+import java.util.ArrayList;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.util.Patterns;
 import android.widget.Toast;
+
+import com.example.agriexpensett.upaccendpoint.model.UpAcc;
 
 public class SignIn {
 	Context context;

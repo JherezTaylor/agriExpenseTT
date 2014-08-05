@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import uwi.dcit.AgriExpenseTT.CycleUseage;
 import uwi.dcit.AgriExpenseTT.CycleUseageRedesign;
 import uwi.dcit.AgriExpenseTT.EditCycle;
 import uwi.dcit.AgriExpenseTT.HireLabour;
@@ -123,8 +122,7 @@ public class FragmentViewCycles extends ListFragment{
 				Date d=calender.getTime();
 				DateR.setText(d.toLocaleString());
 				
-				int i=0;
-			   return row;
+				return row;
 		  }
 		  
 		  //register click  

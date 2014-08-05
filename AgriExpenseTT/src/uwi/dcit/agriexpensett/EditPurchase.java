@@ -1,7 +1,5 @@
 package uwi.dcit.AgriExpenseTT;
 
-import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
-
 import helper.DHelper;
 import helper.DataManager;
 import helper.DbHelper;
@@ -18,6 +16,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
+
 import dataObjects.localResourcePurchase;
 
 public class EditPurchase extends ActionBarActivity {

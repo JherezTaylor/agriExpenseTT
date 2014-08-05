@@ -27,31 +27,6 @@
   "ownerName" : "example.com",
   "packagePath" : "agriexpensett",
   "methods" : {
-    "translogendpoint.removeTransLog" : {
-      "path" : "translog/{keyrep}/{namespace}",
-      "httpMethod" : "DELETE",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.example.agriexpensett.TransLogEndpoint.removeTransLog",
-      "request" : {
-        "parameters" : {
-          "keyrep" : {
-            "type" : "string",
-            "required" : true
-          },
-          "namespace" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
     "translogendpoint.logs" : {
       "path" : "Logs/{time}/{namespace}",
       "httpMethod" : "POST",
@@ -75,6 +50,31 @@
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "translogendpoint.removeTransLog" : {
+      "path" : "translog/{keyrep}/{namespace}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.example.agriexpensett.TransLogEndpoint.removeTransLog",
+      "request" : {
+        "parameters" : {
+          "keyrep" : {
+            "type" : "string",
+            "required" : true
+          },
+          "namespace" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
       }
     },
     "translogendpoint.deleteAll" : {
@@ -251,11 +251,11 @@
           "parent" : {
             "$ref" : "Key"
           },
-          "complete" : {
-            "type" : "boolean"
-          },
           "namespace" : {
             "type" : "string"
+          },
+          "complete" : {
+            "type" : "boolean"
           }
         }
       },
@@ -288,12 +288,12 @@
       }
     },
     "methods" : {
-      "com.example.agriexpensett.TransLogEndpoint.removeTransLog" : {
-      },
       "com.example.agriexpensett.TransLogEndpoint.Logs" : {
         "response" : {
           "$ref" : "TransLogCollection"
         }
+      },
+      "com.example.agriexpensett.TransLogEndpoint.removeTransLog" : {
       },
       "com.example.agriexpensett.TransLogEndpoint.deleteAll" : {
       },
