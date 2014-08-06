@@ -13,6 +13,8 @@
             <link href="Addons/Select2/select2.css" rel="stylesheet" type="text/css" />
             <!-- Ionicons -->
             <link href="AdminLTE/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+            <!-- bootstrap slider -->
+            <link href="AdminLTE/css/bootstrap-slider/slider.css" rel="stylesheet" type="text/css" />
             <!-- Theme style -->
             <link href="AdminLTE/css/AdminLTE.css" rel="stylesheet" type="text/css" />
             
@@ -24,6 +26,9 @@
             <script src="Addons/Select2/select2.js"></script>
             <!-- Bootstrap -->
             <script src="AdminLTE/js/bootstrap.min.js" type="text/javascript"></script>
+             <!-- Bootstrap slider -->
+            <script src="AdminLTE/js/plugins/bootstrap-slider/bootstrap-slider.js" type="text/javascript"></script>
+            <script src="js/sliderElements.js" type="text/javascript"></script>
             <!-- Highcharts -->
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <!-- Load APP Engine -->
@@ -457,45 +462,58 @@
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                     
-                    <div class="box">
-                                <div class="box-header">
+                    <div class="box" style="height: 240px;">
+                                
+                        <div class="box-header">
                                     <h3 class="box-title">Filter Options</h3>
                                 </div>
                                 <div class="box-body">
-                                    <select id = "cropSelection">
-                                        <option value= "Hot Pepper">Hot Pepper</option>
-                                        <option value= "Sweet Pepper">Sweet Pepper</option>
-                                        <option value= "Pigeon Peas">Pigeon Peas</option>
-                                        <option value= "Soyabean - Legumes">Soyabean - Legumes</option>
-                                        <option value= "Cocoa">Cocoa</option>
-                                        
-                                        <option value= "Citrus">Citrus</option>
-                                        <option value= "Coconut">Coconut</option>
-                                        <option value= "Golden Apple">Golden Apple</option>
-                                        <option value= "Mango">Mango</option>
-                                        <option value= "Watermelon">Watermelon</option>
-                                        
-                                        <option value= "Cassava">Cassava</option>
-                                        <option value= "Dasheen">Dasheen</option>
-                                        <option value= "Sweet Potato">Sweet Potato</option>
-                                        <option value= "Tannia">Tannia</option>
-                                        <option value= "Yam">Yam</option>
-                                        
-                                        <option value= "Broccoli">Broccoli</option>
-                                        <option value= "Carrots">Carrots</option>
-                                        <option value= "Cabbage">Cabbage</option>
-                                        <option value= "Cauliflower">Cauliflower</option>
-                                        <option value= "Christophene">Christophene</option>
-                                        <option value= "Eggplant">Eggplant</option>
-                                        <option value= "Escallion">Escallion</option>
-                                        <option value= "Lettuce">Lettuce</option>
-                                        <option value= "Onions">Onions</option>
+                                    <div class ="row margin">
+                                        <div class="col-md-10">
+                                            <div><label>Crop Selection</label></div>
+                                            <select id = "cropSelection" style="width: 20%;">
+                                                <option value= "Hot Pepper">Hot Pepper</option>
+                                                <option value= "Sweet Pepper">Sweet Pepper</option>
+                                                <option value= "Pigeon Peas">Pigeon Peas</option>
+                                                <option value= "Soyabean - Legumes">Soyabean - Legumes</option>
+                                                <option value= "Cocoa">Cocoa</option>
+
+                                                <option value= "Citrus">Citrus</option>
+                                                <option value= "Coconut">Coconut</option>
+                                                <option value= "Golden Apple">Golden Apple</option>
+                                                <option value= "Mango">Mango</option>
+                                                <option value= "Watermelon">Watermelon</option>
+
+                                                <option value= "Cassava">Cassava</option>
+                                                <option value= "Dasheen">Dasheen</option>
+                                                <option value= "Sweet Potato">Sweet Potato</option>
+                                                <option value= "Tannia">Tannia</option>
+                                                <option value= "Yam">Yam</option>
+
+                                                <option value= "Broccoli">Broccoli</option>
+                                                <option value= "Carrots">Carrots</option>
+                                                <option value= "Cabbage">Cabbage</option>
+                                                <option value= "Cauliflower">Cauliflower</option>
+                                                <option value= "Christophene">Christophene</option>
+                                                <option value= "Eggplant">Eggplant</option>
+                                                <option value= "Escallion">Escallion</option>
+                                                <option value= "Lettuce">Lettuce</option>
+                                                <option value= "Onions">Onions</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     
-                                    </select>
-                                
+                                    <div class="row margin">
+                                        <div class="col-sm-6">
+                                            <label>Select Land Quantity</label>
+                                            <input id="rangeSel" type="text" value="" class="slider form-control" data-slider-min="0" data-slider-max="1000" data-slider-step="5" data-slider-value="[0,1000]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
+                                        </div>
+                                    </div>
+                                    <button id="runQuery" class ="btn btn-primary pull-right" onclick="fetchData()">Fetch Results</button>
                                 </div><!-- /.box-body -->
                             </div><!-- end split buttons box -->
                     <div id="container" style="height: 400px; min-width: 310px"></div>
+                   
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->

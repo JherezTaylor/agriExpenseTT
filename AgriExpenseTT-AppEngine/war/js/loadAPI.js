@@ -42,12 +42,13 @@ function checkErrorResponse(result) {
 
 function fetchData() {
     //'use strict';
-	var option1 = document.getElementById("crop");
-    var a = option1.options[option1.selectedIndex].value;
-    var option2 = document.getElementById("landQty");
-    var b = parseFloat(option2.options[option2.selectedIndex].value);
-    var x = gapi.client.cycleendpoint.getMatchingCycles({"cropName": a,"landQty": b});
-    x.execute(function(resp) { generateChart(resp); });
+    var cropSelection = document.getElementById("cropSelection");
+    var cropValue = cropSelection.options[cropSelection.selectedIndex].value;
+    var inputRange = $(rangeSel).data('slider').getValue();
+    var start = parseFloat(inputRange[0]);
+    var end = parseFloat(inputRange[1]);
+    var queryData = gapi.client.cycleendpoint.getMatchingCycles({"cropName": cropValue,"landQty": landValue,"start": start,"end": end});
+    queryData.execute(function(resp) { generateChart(resp); });*/
 }
 
 function generateChart(cycleItems) {
@@ -58,7 +59,7 @@ function generateChart(cycleItems) {
         console.log('No Data Returned');
     } else {
         $(function () {
-            $('#container').highcharts({
+            $('#interactive').highcharts({
                 title: {
                     text: 'Cost of Cycle Items',
                     x: -20 // Center
@@ -82,7 +83,7 @@ function generateChart(cycleItems) {
                 mySeries.push([item.landQty]);
                // i++;
             }
-            chart = $('#container').highcharts();
+            chart = $('#interactive').highcharts();
             chart.series[0].setData(mySeries);
         });
     }
