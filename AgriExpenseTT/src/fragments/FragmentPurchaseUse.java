@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import uwi.dcit.AgriExpenseTT.CycleUseageRedesign;
 import uwi.dcit.AgriExpenseTT.R;
 import uwi.dcit.AgriExpenseTT.UseResource;
+
+import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
+
+import dataObjects.localCycle;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentValues;
@@ -32,10 +36,6 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.agriexpensett.rpurchaseendpoint.model.RPurchase;
-
-import dataObjects.localCycle;
 
 public class FragmentPurchaseUse extends Fragment {
 	View view;

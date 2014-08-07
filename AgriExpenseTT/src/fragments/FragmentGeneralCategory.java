@@ -16,10 +16,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
 import dataObjects.localCycle;
 import dataObjects.localCycleUse;
 
@@ -35,8 +36,9 @@ public class FragmentGeneralCategory extends Fragment{
 	SQLiteDatabase db;
 	DbHelper dbh;
 	
-	double catTotal=0,pm=0,fer=0,soilam=0,chem=0,labr=0,other=0;//totals
+	double pm=0,fer=0,soilam=0,chem=0,labr=0,other=0;//totals
 	View view;
+	
 	localCycle currCycle;
 	
 	@Override

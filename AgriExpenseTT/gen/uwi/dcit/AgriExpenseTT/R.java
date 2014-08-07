@@ -1099,24 +1099,20 @@ containing a value of this type.
         public static final int button_normal_other=0x7f020065;
         public static final int button_normal_pm=0x7f020066;
         public static final int button_normal_soilam=0x7f020067;
-        public static final int default4=0x7f020068;
-        public static final int ic_launcher=0x7f020069;
-        public static final int icon_cassava1=0x7f02006a;
-        public static final int icon_cassava2=0x7f02006b;
-        public static final int icon_cassava3=0x7f02006c;
-        public static final int icon_menu=0x7f02006d;
-        public static final int icon_money1=0x7f02006e;
-        public static final int icon_money2=0x7f02006f;
-        public static final int icon_next=0x7f020070;
-        public static final int icon_sweetpepper1=0x7f020071;
-        public static final int icon_sweetpepper2=0x7f020072;
-        public static final int icon_tomatoe1=0x7f020073;
-        public static final int icon_tomatoe2=0x7f020074;
-        public static final int icon_tomatoe3=0x7f020075;
-        public static final int img_default1=0x7f020076;
-        public static final int img_default2=0x7f020077;
-        public static final int img_default3=0x7f020078;
-        public static final int logo_agrinet=0x7f020079;
+        public static final int crop_pott=0x7f020068;
+        public static final int crop_under_rain_outline=0x7f020069;
+        public static final int crop_under_rain_solid=0x7f02006a;
+        public static final int crop_under_sun=0x7f02006b;
+        public static final int default4=0x7f02006c;
+        public static final int farm_24_2x=0x7f02006d;
+        public static final int ic_launcher=0x7f02006e;
+        public static final int icon_menu=0x7f02006f;
+        public static final int img_default1=0x7f020070;
+        public static final int img_default2=0x7f020071;
+        public static final int logo_agrinet=0x7f020072;
+        public static final int money_bag_down=0x7f020073;
+        public static final int money_doller1=0x7f020074;
+        public static final int money_wallet=0x7f020075;
     }
     public static final class id {
         public static final int HireLabour=0x7f05008f;
@@ -1516,11 +1512,12 @@ containing a value of this type.
         public static final int new_purchase_redesign=0x7f0c0012;
         public static final int purchase=0x7f0c0013;
         public static final int sales_cost=0x7f0c0014;
-        public static final int use_purchase=0x7f0c0015;
-        public static final int use_resource=0x7f0c0016;
-        public static final int view_cycle_usege=0x7f0c0017;
-        public static final int view_cycles=0x7f0c0018;
-        public static final int view_navigation=0x7f0c0019;
+        public static final int select_location=0x7f0c0015;
+        public static final int use_purchase=0x7f0c0016;
+        public static final int use_resource=0x7f0c0017;
+        public static final int view_cycle_usege=0x7f0c0018;
+        public static final int view_cycles=0x7f0c0019;
+        public static final int view_navigation=0x7f0c001a;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1586,6 +1583,7 @@ containing a value of this type.
         public static final int title_activity_new_purchase_redesign=0x7f0a001a;
         public static final int title_activity_purchase=0x7f0a0013;
         public static final int title_activity_sales_cost=0x7f0a0027;
+        public static final int title_activity_select_location=0x7f0a0029;
         public static final int title_activity_use_purchase_frag=0x7f0a0018;
         public static final int title_activity_use_resource=0x7f0a0016;
         public static final int title_activity_view_cycle_usege=0x7f0a0026;

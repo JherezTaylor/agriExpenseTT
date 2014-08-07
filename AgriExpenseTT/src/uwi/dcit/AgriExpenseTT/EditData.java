@@ -8,18 +8,17 @@ import helper.DbQuery;
 
 import java.util.ArrayList;
 
-import android.app.ActionBar;
-import android.app.ActionBar.Tab;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.app.ListFragment;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import dataObjects.localCycle;
 import dataObjects.localResourcePurchase;
+import android.support.v7.app.ActionBarActivity;
+import android.app.ActionBar;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.app.ActionBar.Tab;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class EditData extends ActionBarActivity {
 	ArrayList<localCycle> li;

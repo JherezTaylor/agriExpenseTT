@@ -1,13 +1,6 @@
 package com.example.agriexpensett;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-import javax.inject.Named;
-import javax.persistence.EntityExistsException;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
+import com.example.agriexpensett.EMF;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -17,6 +10,14 @@ import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.datanucleus.query.JPACursorHelper;
+
+import java.util.List;
+
+import javax.annotation.Nullable;
+import javax.inject.Named;
+import javax.persistence.EntityExistsException;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 
 @Api(name = "upaccendpoint", namespace = @ApiNamespace(ownerDomain = "example.com", ownerName = "example.com", packagePath="agriexpensett"))
@@ -76,12 +77,13 @@ public class UpAccEndpoint {
    * @return The entity with primary key id.
    */
   @ApiMethod(name = "getUpAcc")
-  public UpAcc getUpAcc(@Named("id") Long id, @Named("acc") String acc) {
-	NamespaceManager.set(acc);
+  public UpAcc getUpAcc(@Named("id") Long id, @Named("namespace") String namespace) {
+	NamespaceManager.set(namespace);
     EntityManager mgr = getEntityManager();
     UpAcc upacc  = null;
     try {
       upacc = mgr.find(UpAcc.class, id);
+      System.out.println("CLOUD-ACCOUNT:"+upacc.toString());
     }catch(Exception e){
     	upacc=null;
     } finally {
