@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"MKGA2miAJpVGF7yQTQhsoDXpye8/NSKfyXJSld2py0sJ5ludle6ssVY\"",
+ "etag": "\"MKGA2miAJpVGF7yQTQhsoDXpye8/xt0WLI_zr96-wRvuXB-DZCYoGYg\"",
  "discoveryVersion": "v1",
  "id": "cycleendpoint:v1",
  "name": "cycleendpoint",
@@ -247,7 +247,7 @@
     "cursor": {
      "type": "string"
     },
-    "landQty": {
+    "end": {
      "type": "number",
      "required": true,
      "format": "double"
@@ -255,11 +255,17 @@
     "limit": {
      "type": "integer",
      "format": "int32"
+    },
+    "start": {
+     "type": "number",
+     "required": true,
+     "format": "double"
     }
    },
    "parameterOrder": [
     "cropName",
-    "landQty"
+    "start",
+    "end"
    ],
    "returns": {
     "$ref": "CollectionResponse_Cycle"

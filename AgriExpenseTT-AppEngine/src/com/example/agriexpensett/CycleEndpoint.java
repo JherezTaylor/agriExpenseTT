@@ -83,7 +83,8 @@ public class CycleEndpoint {
   @ApiMethod(name="getMatchingCycles")
   public CollectionResponse <Cycle> getMatchingCyles(
     @Named("cropName")String cropName,
-      @Named("landQty")Double landQty, 
+      @Named("start")Double start,
+      @Named("end") Double end,
       @Nullable @Named("cursor") String cursorString,
       @Nullable @Named("limit") Integer limit) {
   
@@ -113,9 +114,10 @@ public class CycleEndpoint {
         
         try{
           mgr = getEntityManager();
-          Query query = mgr.createQuery("select from Cycle as Cycle where cropName=:x and landQty>=:y");
+          Query query = mgr.createQuery("select from Cycle as Cycle where cropName=:x and landQty>=:y and landQty<=:z");
           query.setParameter("x",cropName.toUpperCase());
-          query.setParameter("y",landQty);
+          query.setParameter("y",start);
+          query.setParameter("z",end);
                 
           if (cursorString != null && cursorString != "") {
             cursor = Cursor.fromWebSafeString(cursorString);
