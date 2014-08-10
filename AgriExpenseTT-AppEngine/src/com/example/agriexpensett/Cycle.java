@@ -25,6 +25,8 @@ public class Cycle {
 	private String harvestType;
 	private double costPer;
 	private String cropName;
+	private long startDate;
+	private String county;
 	
 	public double getHarvestAmt() {
 		return harvestAmt;
@@ -59,12 +61,14 @@ public class Cycle {
 	public Cycle() {
 		super();
 	}
-	public Cycle(int cropId, String landType, double landQty, String cropName) {
+	public Cycle(int cropId, String landType, double landQty, String cropName, long startDate, String county) {
 		super();
 		this.cropId = cropId;
 		this.landType = landType;
 		this.landQty = landQty;
 		this.cropName = cropName;
+		this.startDate = startDate;
+		this.county = county;
 	}
 	
 	public int getId() {
@@ -111,10 +115,24 @@ public class Cycle {
 	public void setCropName(String cropName) {
 		this.cropName = cropName;
 	}
+	
+	public long getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(long startDate) {
+		this.startDate = startDate;
+	}
+	public String getCounty() {
+		return county;
+	}
+	public void setCounty(String county) {
+		this.county = county;
+	}
 
 	@Override
 	public String toString() {
 		String n="cycleId:"+id+" cropId:"+cropId+" landType:"+landType+" landQty"+landQty+" cropName"+cropName+"";
 		return n;
 	}
+	
 }

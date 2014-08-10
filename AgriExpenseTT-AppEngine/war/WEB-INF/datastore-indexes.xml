@@ -4,6 +4,16 @@
         <property name="cropName" direction="asc"/>
         <property name="landQty" direction ="desc"/>
     </datastore-index>
+    <datastore-index kind="Cycle" ancestor="false">
+        <property name="county" direction="asc"/>
+        <property name="cropName" direction ="asc"/>
+        <property name="landQty" direction ="asc"/>        
+    </datastore-index>
+    <datastore-index kind="Cycle" ancestor="false">
+        <property name="county" direction="asc"/>
+        <property name="cropName" direction ="asc"/>
+        <property name="costPer" direction ="asc"/>        
+    </datastore-index>
     <datastore-index kind="RPurchase" ancestor="false">
         <property name="elementName" direction="asc"/>
         <property name="type" direction ="desc"/>

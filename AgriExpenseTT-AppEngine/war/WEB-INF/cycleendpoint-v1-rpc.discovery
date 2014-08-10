@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"MKGA2miAJpVGF7yQTQhsoDXpye8/xt0WLI_zr96-wRvuXB-DZCYoGYg\"",
+ "etag": "\"MKGA2miAJpVGF7yQTQhsoDXpye8/-SffnNa8SelnmCluyiNOesy6CdE\"",
  "discoveryVersion": "v1",
  "id": "cycleendpoint:v1",
  "name": "cycleendpoint",
@@ -98,6 +98,9 @@
      "type": "number",
      "format": "double"
     },
+    "county": {
+     "type": "string"
+    },
     "cropId": {
      "type": "integer",
      "format": "int32"
@@ -128,6 +131,10 @@
     },
     "landType": {
      "type": "string"
+    },
+    "startDate": {
+     "type": "string",
+     "format": "int64"
     },
     "totalSpent": {
      "type": "number",
@@ -240,21 +247,18 @@
    "id": "cycleendpoint.getMatchingCycles",
    "allowGet": true,
    "parameters": {
-    "cropName": {
+    "area": {
      "type": "string",
      "required": true
     },
-    "cursor": {
-     "type": "string"
+    "cropName": {
+     "type": "string",
+     "required": true
     },
     "end": {
      "type": "number",
      "required": true,
      "format": "double"
-    },
-    "limit": {
-     "type": "integer",
-     "format": "int32"
     },
     "start": {
      "type": "number",
@@ -265,10 +269,11 @@
    "parameterOrder": [
     "cropName",
     "start",
-    "end"
+    "end",
+    "area"
    ],
    "returns": {
-    "$ref": "CollectionResponse_Cycle"
+    "$ref": "CycleCollection"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"

@@ -79,72 +79,69 @@ public class CycleEndpoint {
       .build();
   }
 
-  @SuppressWarnings({"unchecked", "unused"})
-  @ApiMethod(name="getMatchingCycles")
-  public CollectionResponse <Cycle> getMatchingCyles(
+  
+  @SuppressWarnings("unchecked")
+@ApiMethod(name="getMatchingCycles")
+  public List <Cycle> getMatchingCyles(
     @Named("cropName")String cropName,
-      @Named("start")Double start,
-      @Named("end") Double end,
-      @Nullable @Named("cursor") String cursorString,
-      @Nullable @Named("limit") Integer limit) {
+    @Named("start")Double start,
+    @Named("end") Double end,
+    @Named("area") String area) {
   
     //  NamespaceManager.set("_spydakat");
     
-      EntityManager mgr = null;
-      Cursor cursor = null;
-      List<Cycle> execute = null;
-      
-      /*For namespace list fetching */
-      DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+    EntityManager mgr = null;
+    List<Cycle> execute = null;
+    Query query = null;
+    
+    /*For namespace list fetching */
+    DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
     com.google.appengine.api.datastore.Query q = new com.google.appengine.api.datastore.Query(Entities.NAMESPACE_METADATA_KIND);
     
     List<String> results = new ArrayList<String>();
-    for(Entity e : ds.prepare(q).asIterable()){
-       if (e.getKey().getId() != 0) {
+    for(Entity e : ds.prepare(q).asIterable()) {
+        if (e.getKey().getId() != 0) {
             System.out.println("<default>");
-          } else {
-           // System.out.println(e.getKey().getName());
+        } else {
+            //   System.out.println(e.getKey().getName());
             results.add(Entities.getNamespaceFromNamespaceKey(e.getKey()));
-          }
+        }
     }
     
-      // Set each namespace then return all results under that given namespace
-    for(Iterator<String> i = results.iterator(); i.hasNext(); ) {
-        NamespaceManager.set(i.next());
-        
-        try{
-          mgr = getEntityManager();
-          Query query = mgr.createQuery("select from Cycle as Cycle where cropName=:x and landQty>=:y and landQty<=:z");
-          query.setParameter("x",cropName.toUpperCase());
+      if(area.equals("Nationwide")) {
+    	  mgr = getEntityManager();
+    	  query = mgr.createQuery("select from Cycle as Cycle where cropName=:x and landQty>=:y and landQty<=:z");
+    	  query.setParameter("x",cropName.toUpperCase());
           query.setParameter("y",start);
           query.setParameter("z",end);
-                
-          if (cursorString != null && cursorString != "") {
-            cursor = Cursor.fromWebSafeString(cursorString);
-            query.setHint(JPACursorHelper.CURSOR_HINT, cursor);
-          }
-
-          if (limit != null) {
-            query.setFirstResult(0);
-              query.setMaxResults(limit);
-          }
-
-          execute = (List<Cycle>) query.getResultList();
-            cursor = JPACursorHelper.getCursor(execute);
-            
-            if (cursor != null) cursorString = cursor.toWebSafeString();
-            // Tight loop for fetching all entities from datastore and accomodate
-            // for lazy fetch.
-            for (Cycle obj : execute);
-            } finally {
-              mgr.close();
-            }
       }
+      
+      else {
+    	  mgr = getEntityManager();
+    	  query = mgr.createQuery("select from Cycle as Cycle where cropName=:x and landQty>=:y and landQty<=:z and county=:a");
+    	  query.setParameter("x",cropName.toUpperCase());
+          query.setParameter("y",start);
+          query.setParameter("z",end);
+          query.setParameter("a", area.toUpperCase());
+      }
+      
+      // Set each namespace then return all results under that given namespace
+
+      List<Cycle> cycleList = new ArrayList<Cycle>();
     
-      return CollectionResponse.<Cycle>builder()
-        .setItems(execute)
-        .setNextPageToken(cursorString)
-        .build();
+      for(String i : results) {
+        
+          NamespaceManager.set(i);
+          //mgr = getEntityManager();
+          
+          // Query query = mgr.createQuery("select from Cycle as Cycle where cropName=:x and landQty>=:y and landQty<=:z"); 
+          execute = (List<Cycle>) query.getResultList();
+          for (Cycle obj : execute){
+              cycleList.add(obj);
+          }
+      }
+      //System.out.print(cycleList);
+      return cycleList;
   }
   
   @ApiMethod(name="getAllCycles")

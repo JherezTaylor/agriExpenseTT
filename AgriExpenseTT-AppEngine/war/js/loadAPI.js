@@ -47,13 +47,16 @@ function fetchData() {
     var inputRange = $(rangeSel).data('slider').getValue();
     var start = parseFloat(inputRange[0]);
     var end = parseFloat(inputRange[1]);
-    var queryData = gapi.client.cycleendpoint.getMatchingCycles({"cropName": cropValue,"landQty": landValue,"start": start,"end": end});
-    queryData.execute(function(resp) { generateChart(resp); });*/
+    var areaSelection = document.getElementById("areaSelection");
+    var areaValue = areaSelection.options[areaSelection.selectedIndex].value;
+    var queryData = gapi.client.cycleendpoint.getMatchingCycles({"cropName": cropValue, "start": start,"end": end, "area": areaValue});
+    queryData.execute(function(resp) { generateChart(resp); });
 }
 
 function generateChart(cycleItems) {
     //'use strict';
     var items = cycleItems.items, i, item, chart;
+    console.log(items);
   
     if (!items || items.length === 0) {
         console.log('No Data Returned');

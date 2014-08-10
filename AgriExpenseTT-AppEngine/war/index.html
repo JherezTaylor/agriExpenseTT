@@ -40,6 +40,7 @@
             </script>
             
             <script>$(document).ready(function() { $("#cropSelection").select2(); });</script>
+            <script>$(document).ready(function() { $("#areaSelection").select2(); });</script>
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
             <!--[if lt IE 9]>
@@ -438,10 +439,10 @@
                 </section>
 
                 <!-- Main content -->
-                <section class="content">
+              <section class="content">
                     <div class="row">
-                        <div class="col-xs-12">
-                            <!-- interactive chart -->
+                        <div class="col-md-6">
+                            <!-- Interactive Chart -->
                             <div class="box box-primary">
                                 <div class="box-header">
                                     <i class="fa fa-bar-chart-o"></i>
@@ -454,70 +455,84 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="box-body">
-                                    <div id="interactive" style="height: 400px;"></div>
-                                </div><!-- /.box-body-->
+                                <div class="box-body chart-responsive">
+                                    <div class="chart" id="interactive" style="height: 300px;"></div>
+                                </div><!-- /.box-body -->
                             </div><!-- /.box -->
 
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                    
-                    <div class="box" style="height: 240px;">
+                        </div><!-- /.col (LEFT) -->
+                        <div class="col-md-6">
+                            <div class="box box-primary" style="height: 280px;">
                                 
                         <div class="box-header">
-                                    <h3 class="box-title">Filter Options</h3>
+                            <h3 class="box-title">Filter Options [NB: Only exists only for Carrots and Broccoli ATM]</h3>
+                        </div>
+                        
+                        <div class="box-body">
+                            <div class ="row margin">
+                                <div class="col-md-6">
+                                <div><label>Crop Selection</label></div>
+                                    <select id = "cropSelection" style="width: 75%">
+                                        <option value= "Hot Pepper">Hot Pepper</option>
+                                        <option value= "Sweet Pepper">Sweet Pepper</option>
+                                        <option value= "Pigeon Peas">Pigeon Peas</option>
+                                        <option value= "Soyabean - Legumes">Soyabean - Legumes</option>
+                                        <option value= "Cocoa">Cocoa</option>
+
+                                        <option value= "Citrus">Citrus</option>
+                                        <option value= "Coconut">Coconut</option>
+                                        <option value= "Golden Apple">Golden Apple</option>
+                                        <option value= "Mango">Mango</option>
+                                        <option value= "Watermelon">Watermelon</option>
+
+                                        <option value= "Cassava">Cassava</option>
+                                        <option value= "Dasheen">Dasheen</option>
+                                        <option value= "Sweet Potato">Sweet Potato</option>
+                                        <option value= "Tannia">Tannia</option>
+                                        <option value= "Yam">Yam</option>
+
+                                        <option value= "Broccoli">Broccoli</option>
+                                        <option value= "Carrots">Carrots</option>
+                                        <option value= "Cabbage">Cabbage</option>
+                                        <option value= "Cauliflower">Cauliflower</option>
+                                        <option value= "Christophene">Christophene</option>
+                                        <option value= "Eggplant">Eggplant</option>
+                                        <option value= "Escallion">Escallion</option>
+                                        <option value= "Lettuce">Lettuce</option>
+                                        <option value= "Onions">Onions</option>
+                                    </select>
                                 </div>
-                                <div class="box-body">
-                                    <div class ="row margin">
-                                        <div class="col-md-10">
-                                            <div><label>Crop Selection</label></div>
-                                            <select id = "cropSelection" style="width: 20%;">
-                                                <option value= "Hot Pepper">Hot Pepper</option>
-                                                <option value= "Sweet Pepper">Sweet Pepper</option>
-                                                <option value= "Pigeon Peas">Pigeon Peas</option>
-                                                <option value= "Soyabean - Legumes">Soyabean - Legumes</option>
-                                                <option value= "Cocoa">Cocoa</option>
-
-                                                <option value= "Citrus">Citrus</option>
-                                                <option value= "Coconut">Coconut</option>
-                                                <option value= "Golden Apple">Golden Apple</option>
-                                                <option value= "Mango">Mango</option>
-                                                <option value= "Watermelon">Watermelon</option>
-
-                                                <option value= "Cassava">Cassava</option>
-                                                <option value= "Dasheen">Dasheen</option>
-                                                <option value= "Sweet Potato">Sweet Potato</option>
-                                                <option value= "Tannia">Tannia</option>
-                                                <option value= "Yam">Yam</option>
-
-                                                <option value= "Broccoli">Broccoli</option>
-                                                <option value= "Carrots">Carrots</option>
-                                                <option value= "Cabbage">Cabbage</option>
-                                                <option value= "Cauliflower">Cauliflower</option>
-                                                <option value= "Christophene">Christophene</option>
-                                                <option value= "Eggplant">Eggplant</option>
-                                                <option value= "Escallion">Escallion</option>
-                                                <option value= "Lettuce">Lettuce</option>
-                                                <option value= "Onions">Onions</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                
+                                <div class="col-md-6">
+                                <div><label>Area Selection</label></div>
+                                    <select id = "areaSelection" style="width: 75%">
+                                        <option value= "Nationwide">Nationwide</option>
+                                        <option value= "Caroni">Caroni</option>
+                                        <option value= "Mayaro">Mayaro</option>
+                                        <option value= "Nariva">Nariva</option>
+                                        <option value= "St. Andrew">St. Andrew</option>
+                                        <option value= "St. David">St. David</option>
+                                        <option value= "St. George">St. George</option>
+                                        <option value= "St. Patrick">St. Patrick</option>
+                                        <option value= "Victoria">Victoria</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
                                     
-                                    <div class="row margin">
-                                        <div class="col-sm-6">
-                                            <label>Select Land Quantity</label>
-                                            <input id="rangeSel" type="text" value="" class="slider form-control" data-slider-min="0" data-slider-max="1000" data-slider-step="5" data-slider-value="[0,1000]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
-                                        </div>
-                                    </div>
-                                    <button id="runQuery" class ="btn btn-primary pull-right" onclick="fetchData()">Fetch Results</button>
-                                </div><!-- /.box-body -->
-                            </div><!-- end split buttons box -->
-                    <div id="container" style="height: 400px; min-width: 310px"></div>
-                   
-
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
+                            <div class="row margin">
+                                <div class="col-sm-6">
+                                    <label>Select Land Quantity</label>
+                                    <input id="rangeSel" type="text" value="" class="slider form-control" data-slider-min="0" data-slider-max="500" data-slider-step="5" data-slider-value="[0,500]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
+                                </div>
+                            </div>
+                            <button id="runQuery" class ="btn btn-primary pull-right" onclick="fetchData()">Fetch Results</button>
+                        </div><!-- /.box-body -->
+                    </div><!-- end split buttons box -->
+                </div><!-- /.col (RIGHT) -->
+            </div><!-- /.row -->
+        </section><!-- /.content -->
+        </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
-    </body>
+        </body>
 </html>

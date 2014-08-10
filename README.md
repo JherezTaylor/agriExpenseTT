@@ -1,6 +1,4 @@
-agriExpenseTT-App-Engine-Fork-
-==============================
+agriExpenseTT
+=============
 
-Forked repository to connect to app engine
-
-Test GAE Sync
+A live version can be found at http://1-dot-thematic-ruler-633.appspot.com/

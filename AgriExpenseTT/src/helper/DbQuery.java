@@ -324,6 +324,8 @@ public class DbQuery {
 		c.setHarvestAmt(cursor.getDouble(cursor.getColumnIndex(DbHelper.CROPCYCLE_HARVEST_AMT)));
 		c.setCostPer(cursor.getDouble(cursor.getColumnIndex(DbHelper.CROPCYCLE_COSTPER)));
 		c.setCropName(cursor.getString(cursor.getColumnIndex(DbHelper.CROPCYCLE_RESOURCE)));
+		c.setStartDate(cursor.getLong(cursor.getColumnIndex(DbHelper.CROPCYCLE_DATE)));
+		c.setCounty(cursor.getString(cursor.getColumnIndex(DbHelper.UPDATE_ACCOUNT_COUNTY)));
 		return c;
 	}
 	

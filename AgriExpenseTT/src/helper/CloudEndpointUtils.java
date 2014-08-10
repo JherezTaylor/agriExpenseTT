@@ -38,7 +38,7 @@ public class CloudEndpointUtils {
    * DevAppServer locally).
    */
   //protected static final String LOCAL_APP_ENGINE_SERVER_URL = "http://localhost:8888/";
-  protected static final String LOCAL_APP_ENGINE_SERVER_URL = "https://onyx-park-618.appspot.com/";
+  protected static final String LOCAL_APP_ENGINE_SERVER_URL = "https://thematic-ruler-633.appspot.com/";
 
   /*
    * The root URL of where your DevAppServer is running when it's being
@@ -49,7 +49,7 @@ public class CloudEndpointUtils {
    * for more information.
    */
   //protected static final String LOCAL_APP_ENGINE_SERVER_URL_FOR_ANDROID = "http://10.0.2.2:8888";
-  protected static final String LOCAL_APP_ENGINE_SERVER_URL_FOR_ANDROID = "https://onyx-park-618.appspot.com";
+  protected static final String LOCAL_APP_ENGINE_SERVER_URL_FOR_ANDROID = "https://thematic-ruler-633.appspot.com";
 
   /**
    * Updates the Google client builder to connect the appropriate server based
