@@ -1,4 +1,11 @@
-<!-- Indices written at Sun, 10 Aug 2014 18:56:37 EDT -->
+<!-- Indices written at Mon, 11 Aug 2014 01:37:54 EDT -->
 
-<datastore-indexes/>
+<datastore-indexes>
 
+    <!-- Used 2 times in query history -->
+    <datastore-index kind="Cycle" ancestor="false" source="auto">
+        <property name="cropName" direction="asc"/>
+        <property name="landQty" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

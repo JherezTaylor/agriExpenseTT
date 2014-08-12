@@ -1,13 +1,13 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/upaccendpoint/v1/20140810233441/java/1.18.0-rc/example.com-upaccendpoint-v1-20140810233441-java-1.18.0-rc-sources.jar", 
-      "path": "example.com-upaccendpoint-v1-20140810233441-java-1.18.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/upaccendpoint/v1/20140812075138/java/1.18.0-rc/example.com-upaccendpoint-v1-20140812075138-java-1.18.0-rc-sources.jar", 
+      "path": "example.com-upaccendpoint-v1-20140812075138-java-1.18.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2014-08-10 23:34"
+      "timestamp": "2014-08-12 07:51"
     }, 
     {
-      "path": "example.com-upaccendpoint-v1-20140810233441-java-1.18.0-rc.jar.properties", 
+      "path": "example.com-upaccendpoint-v1-20140812075138-java-1.18.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -675,5 +675,5 @@
   "packagePath": "agriexpensett", 
   "language_version": "1.18.0-rc", 
   "id": "upaccendpoint:v1", 
-  "revision": 20140810233441
+  "revision": 20140812075138
 }

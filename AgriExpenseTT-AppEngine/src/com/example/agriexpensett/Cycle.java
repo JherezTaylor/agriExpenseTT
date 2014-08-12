@@ -10,11 +10,9 @@ import javax.persistence.Id;
 import com.google.appengine.api.datastore.Key;
 
 @Entity
-public class Cycle {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Key key;
-    private String Account;
+public class Cycle {@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Key key;
+	private String Account;
 	private int id;
 	private int cropId;
 	private String landType;
@@ -27,7 +25,7 @@ public class Cycle {
 	private String cropName;
 	private long startDate;
 	private String county;
-	
+
 	public double getHarvestAmt() {
 		return harvestAmt;
 	}
@@ -70,7 +68,7 @@ public class Cycle {
 		this.startDate = startDate;
 		this.county = county;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -95,7 +93,7 @@ public class Cycle {
 	public void setLandQty(double landQty) {
 		this.landQty = landQty;
 	}
-	
+
 	public Key getKey() {
 		return key;
 	}
@@ -115,7 +113,7 @@ public class Cycle {
 	public void setCropName(String cropName) {
 		this.cropName = cropName;
 	}
-	
+
 	public long getStartDate() {
 		return startDate;
 	}
@@ -131,8 +129,8 @@ public class Cycle {
 
 	@Override
 	public String toString() {
-		String n="cycleId:"+id+" cropId:"+cropId+" landType:"+landType+" landQty"+landQty+" cropName"+cropName+"";
+		String n = "cycleId:" + id + " cropId:" + cropId + " landType:" + landType + " landQty" + landQty + " cropName" + cropName + "";
 		return n;
 	}
-	
+
 }
